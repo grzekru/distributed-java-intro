@@ -2,15 +2,19 @@ package exercise1;
 
 import common.Counter;
 
-public class SynchronizedCounter implements Counter {
-
-    @Override
-    public void increment() {
-
+public class SynchronizedCounter implements Counter 
+{
+	private long value = 0;
+	
+    public void increment() 
+    {
+    	value += 1;
+    	System.out.println("increment: " + value);
     }
 
-    @Override
-    public long getValue() {
-        return 0;
+    public long getValue() 
+    {
+    	System.out.println("getValue: " + value);
+    	return value;
     }
 }

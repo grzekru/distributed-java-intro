@@ -20,5 +20,9 @@
     <bean id="offerTopic" class="org.apache.activemq.command.ActiveMQTopic">
         <constructor-arg value="offerTopic"/>
     </bean>
+    
+    <bean id="offerService" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg value="offerService"/>
+    </bean>
 
 </beans>

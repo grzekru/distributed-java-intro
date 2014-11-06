@@ -5,7 +5,6 @@ import javax.jms.MessageListener;
 
 public class OrderService implements MessageListener {
 
-    @Override
     public void onMessage(Message message) {
         throw new UnsupportedOperationException();
 

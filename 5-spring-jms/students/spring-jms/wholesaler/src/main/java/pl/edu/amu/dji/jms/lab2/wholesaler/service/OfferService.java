@@ -1,10 +1,10 @@
 package pl.edu.amu.dji.jms.lab2.wholesaler.service;
 
 import org.springframework.jms.core.JmsTemplate;
-
 import javax.jms.Destination;
 
-public class OfferService {
+public class OfferService 
+{
 
     private JmsTemplate jmsTemplate;
 
@@ -12,19 +12,24 @@ public class OfferService {
 
     private Destination orderQueue;
 
-    public void setJmsTemplate(JmsTemplate jmsTemplate) {
+    public void setJmsTemplate(JmsTemplate jmsTemplate) 
+    {
         this.jmsTemplate = jmsTemplate;
     }
 
-    public void setOfferTopic(Destination offerTopic) {
+    public void setOfferTopic(Destination offerTopic) 
+    {
         this.offerTopic = offerTopic;
     }
 
-    public void setOrderQueue(Destination orderQueue) {
+    public void setOrderQueue(Destination orderQueue) 
+    {
         this.orderQueue = orderQueue;
     }
 
-    public void sendOffer(final Double price) {
+    public void sendOffer(final Double price) 
+    {
+    	System.out.println("--- sendOffer ---");
         throw new UnsupportedOperationException();
     }
 }

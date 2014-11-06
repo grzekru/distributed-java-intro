@@ -19,7 +19,6 @@ public class BuyService implements MessageListener {
         this.maxPrice = maxPrice;
     }
 
-    @Override
     public void onMessage(Message message) {
         throw new UnsupportedOperationException();
     }
