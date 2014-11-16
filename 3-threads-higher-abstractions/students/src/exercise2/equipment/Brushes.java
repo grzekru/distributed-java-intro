@@ -1,12 +1,26 @@
 package exercise2.equipment;
 
-public class Brushes {
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
-    public String takeBrush() throws InterruptedException {
-        return null;
+public class Brushes 
+{
+	private final BlockingQueue<String> queue = new ArrayBlockingQueue<String>(3);
+	
+	public Brushes() 
+	{
+		queue.offer("regular");
+		queue.offer("triangular");
+		queue.offer("spectacular");
+	}
+	
+    public String takeBrush() throws InterruptedException 
+    {
+    	return queue.take();
     }
 
-    public void returnBrush(String brush) {
-
+    public void returnBrush(String brush) 
+    {
+    	queue.offer(brush);
     }
 }

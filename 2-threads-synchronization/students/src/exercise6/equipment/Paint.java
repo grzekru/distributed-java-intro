@@ -1,8 +1,9 @@
 package exercise6.equipment;
 
-public class Paint {
-
-    public String takePaint() {
+public class Paint 
+{
+    public String takePaint() 
+    {
         return "YellowPaint";
     }
 }

@@ -1,16 +1,21 @@
 package exercise4;
 
-public class Main {
+import java.util.concurrent.ForkJoinPool;
 
-    public static void main(String[] args) {
+public class Main 
+{
+    public static void main(String[] args) 
+    {
         String rootUrl = "http://wiadomosci.gazeta.pl/";
-        String wordToFound = "sikorski";
-        Integer numberOfWords = 0;
+        String wordToFound = "gdyby";
 
-        // TODO: Create new ForkJoinPool object
-        // TODO: Create new WebCrawlingTask for rootUrl and wordToFound
-        // TODO: Invoke invoke method on ForkJoinPool object passing WebCrawlingTask
-        // TODO: Assign result of invoke method to numberOfWords variable
+        // Create new ForkJoinPool object
+        ForkJoinPool forkJoinPool = new ForkJoinPool();
+        // Create new WebCrawlingTask for rootUrl and wordToFound
+        WebCrawlingTask webCrawlingTask = new WebCrawlingTask(rootUrl, wordToFound);
+        // Invoke invoke method on ForkJoinPool object passing WebCrawlingTask
+        // Assign result of invoke method to numberOfWords variable
+        Integer numberOfWords = forkJoinPool.invoke(webCrawlingTask);
 
         System.out.printf("Number of words '%s': %d", wordToFound, numberOfWords);
     }

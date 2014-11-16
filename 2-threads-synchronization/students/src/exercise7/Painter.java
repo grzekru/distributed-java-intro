@@ -3,19 +3,21 @@ package exercise7;
 import exercise7.equipment.Brushes;
 import exercise7.equipment.Paints;
 
-public class Painter implements Runnable {
-
+public class Painter implements Runnable 
+{
     private final Paints paints;
     private final Brushes brushes;
 
-    public Painter(Paints paints, Brushes brushes) {
+    public Painter(Paints paints, Brushes brushes) 
+    {
         this.paints = paints;
         this.brushes = brushes;
     }
 
-    @Override
-    public void run() {
-        try {
+    public void run() 
+    {
+        try 
+        {
             paints.takePaint();
             Thread.sleep(100);
             brushes.takeBrush();
@@ -23,9 +25,10 @@ public class Painter implements Runnable {
 
             System.out.println("Painter " + Thread.currentThread().getName() + " is painting!");
             Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } finally {
+        } 
+        catch (InterruptedException e) {} 
+        finally 
+        {
             paints.returnPaint();
             brushes.returnBrush();
         }

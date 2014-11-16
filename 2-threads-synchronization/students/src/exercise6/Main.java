@@ -9,9 +9,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class Main 
+{
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException 
+    {
         Paint paint = new Paint();
         Brush brush = new Brush();
 
@@ -21,7 +23,8 @@ public class Main {
 
         executors.shutdown();
         executors.awaitTermination(10, TimeUnit.SECONDS);
-        if (!executors.isTerminated()) {
+        if (!executors.isTerminated()) 
+        {
             System.out.println("Some threads did not finish in 10 seconds!");
             System.out.println("Probably you have a deadlock in your code!");
         }

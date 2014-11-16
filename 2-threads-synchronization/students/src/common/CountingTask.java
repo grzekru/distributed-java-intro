@@ -1,18 +1,20 @@
 package common;
 
-public class CountingTask implements Runnable {
-
+public class CountingTask implements Runnable 
+{
     private final Counter counter;
     private final int numberOfIterations;
 
-    public CountingTask(Counter counter, int numberOfIterations) {
+    public CountingTask(Counter counter, int numberOfIterations) 
+    {
         this.counter = counter;
         this.numberOfIterations = numberOfIterations;
     }
 
     public void run() 
     {
-        for (int i = 0; i < numberOfIterations; ++i) {
+        for (int i = 0; i < numberOfIterations; ++i) 
+        {
             counter.increment();
         }
     }

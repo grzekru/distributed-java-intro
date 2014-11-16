@@ -1,19 +1,21 @@
 package exercise5;
 
-public class VolatileTask implements Runnable {
+public class VolatileTask implements Runnable 
+{
+    private volatile boolean isRunning = true;
 
-    private boolean isRunning = true;
-
-    @Override
-    public void run() {
+    public void run() 
+    {
         long counter = 0;
-        while (isRunning) {
+        while (isRunning) 
+        {
             counter += 1;
         }
         System.out.println("Counter: " + counter);
     }
 
-    public void end() {
+    public void end() 
+    {
         isRunning = false;
     }
 }

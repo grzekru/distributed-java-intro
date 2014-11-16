@@ -3,28 +3,33 @@ package exercise6.painters;
 import exercise6.equipment.Brush;
 import exercise6.equipment.Paint;
 
-public class LeftHandedPainter extends Painter {
-
-    public LeftHandedPainter(Paint paint, Brush brush) {
+public class LeftHandedPainter extends Painter 
+{
+    public LeftHandedPainter(Paint paint, Brush brush) 
+    {
         super(paint, brush);
     }
 
-    @Override
-    public void run() {
-        try {
-            synchronized (paint) {
+    public void run() 
+    {
+        try 
+        {
+            synchronized (brush) 
+            {
+            	System.out.println("LEFT SYNCH BRUSH");
                 String takenPaint = paint.takePaint();
                 Thread.sleep(100);
 
-                synchronized (brush) {
+                synchronized (paint) 
+                {
+                	System.out.println("LEFT SYNCH PAINT");
                     String takenBrush = this.brush.takeBrush();
                     Thread.sleep(100);
 
                     System.out.printf("Left hand painter painting with %s and %s\n", takenPaint, takenBrush);
                 }
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        } 
+        catch (InterruptedException e) {}
     }
 }
